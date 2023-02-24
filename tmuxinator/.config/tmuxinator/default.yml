@@ -1,0 +1,10 @@
+name: <%= @settings["name"] %>
+root: <%= @settings["root"] %>
+
+windows:
+  - "": nvim "+Telescope find_files"
+  - "":
+      layout: even-vertical
+      panes:
+        - clear
+        - iex -S mix phx.server

@@ -1,0 +1,30 @@
+[user]
+	name = Zack Creach
+	email = zackcreach@gmail.com
+	signingkey = 64E36B881E7F93F5
+[push]
+	default = current
+[pull]
+	default = current
+[alias]
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	s = status
+	co = checkout
+	coa = checkout .
+	cob = checkout -b
+	rs = reset
+	rsa = reset .
+	com = checkout main
+	brc = !git rev-parse --abbrev-ref HEAD | pbcopy # Pipe current branch name to clipboard
+	brn = !git rev-parse --abbrev-ref HEAD # Output current branch name 
+	brd = branch -d
+	brD = branch -D
+	cm = commit -m
+	aa = add .
+	st = stash --include-untracked
+	sp = stash pop
+	mm = merge main
+[core]
+  	excludesFile = ~/.config/git/.gitignore
+[commit]
+	gpgsign = true

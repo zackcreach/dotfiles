@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -eu
+TARGET=$(ls -d ~/dev/* ~/dotfiles/* | fzf --header-first --header="Launch Project" --preview "exa --tree --icons --level 3 --git-ignore {}")
+NAME=$(basename $TARGET)
+
+tmuxinator start $NAME || tmuxinator start default name=$NAME root=$TARGET

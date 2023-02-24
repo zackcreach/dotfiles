@@ -1,0 +1,10 @@
+name: portal
+root: ~/dev/portal/
+
+windows:
+  - "": nvim "+Telescope find_files"
+  - "":
+      layout: even-vertical
+      panes:
+        - iex -S mix phx.server
+        - clear
