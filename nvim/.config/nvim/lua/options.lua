@@ -48,6 +48,7 @@ vim.opt.incsearch = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.signcolumn = 'yes'
+vim.opt.cursorline = true
 
 if vim.fn.executable("rg") then
   vim.o.grepprg = "rg --vimgrep --hidden -g !.git"

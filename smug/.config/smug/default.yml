@@ -1,0 +1,13 @@
+session: ${name}
+root: ${root}
+
+windows:
+  - name: " "
+    commands:
+      - nvim "+Telescope find_files"
+  - name: " "
+    panes:
+      - type: horizontal
+        commands:
+        - clear
+        - iex -S mix phx.server

@@ -20,9 +20,13 @@ return require('packer').startup(function(use)
 		end
 	}
 
+	use('tpope/vim-obsession')
 	use('tpope/vim-surround')
-	use('tpope/vim-fugitive')
 	use('tpope/vim-commentary')
+	use {
+		'tpope/vim-fugitive',
+		after = 'nord.nvim'
+	}
 
 	use { 
 		'neovim/nvim-lspconfig',
@@ -40,6 +44,11 @@ return require('packer').startup(function(use)
 		config = function()
 			require('treesitter')
 		end
+	}
+
+	use {
+		'prettier/vim-prettier',
+		ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'graphql', 'markdown', 'vue', 'html'}
 	}
 
 	use {
