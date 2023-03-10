@@ -1,5 +1,5 @@
-session: ${name}
-root: ${root}
+session: PORTAL
+root: ~/dev/portal
 
 windows:
   - name: " "
@@ -10,4 +10,4 @@ windows:
       - type: horizontal
         commands:
         - clear
-        - clear
+        - iex -S mix phx.server

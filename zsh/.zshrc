@@ -31,9 +31,10 @@ export SCRIPTS="$HOME/scripts/bin"
 export NODE="/Users/zack/.nvm/versions/node/v14.17.0/bin"
 export GO="/usr/local/go/bin"
 export QMK="/usr/local/opt/avr-gcc@8/bin"
-export PATH=$DEFAULT:$SCRIPTS:$NODE:$GO:$QMK
 export FZF_DEFAULT_OPTS="--reverse --ansi --color=bg+:-1,fg:15,fg+:-1,prompt:6,header:5,pointer:2,hl:3,hl+:3,spinner:05,info:15,border:15"
 export MANPAGER="nvim +Man!"
+export YARN="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=$DEFAULT:$SCRIPTS:$NODE:$GO:$QMK:$YARN
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -135,5 +136,4 @@ alias PG="psql --host=gif-master-db.cgbafay9iyen.us-east-1.rds.amazonaws.com --p
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+. $(brew --prefix asdf)/libexec/asdf.sh

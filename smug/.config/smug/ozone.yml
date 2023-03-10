@@ -1,5 +1,5 @@
-session: ${name}
-root: ${root}
+session: OZONE
+root: ~/dev/ozone
 
 windows:
   - name: " "
@@ -10,4 +10,4 @@ windows:
       - type: horizontal
         commands:
         - clear
-        - clear
+        - yarn dev
