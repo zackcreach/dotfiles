@@ -6,20 +6,20 @@ g.VimuxHeight = "30"
 
 g["test#preserve_screen"] = false
 g.neomake_open_list = true
-g['test#strategy'] = {
-  nearest = 'vimux',
-  file = 'vimux',
-  suite = 'vimux'
+g["test#strategy"] = {
+	nearest = "vimux",
+	file = "vimux",
+	suite = "vimux",
 }
-g['test#neovim#term_position'] = 'vert'
-g.dispatch_compilers = {elixir = 'exunit'}
+g["test#neovim#term_position"] = "vert"
+g.dispatch_compilers = { elixir = "exunit" }
 
-map('n', '<leader>tt', '<CMD>TestFile<CR>')
-map('n', '<leader>tT', '<CMD>TestFile -strategy=neomake<CR>')
-map('n', '<leader>tn', '<CMD>TestNearest<CR>')
-map('n', '<leader>tN', '<CMD>TestNearest -strategy=neomake<CR>')
-map('n', '<leader>t.', '<CMD>TestLast<CR>')
-map('n', '<leader>tv', '<CMD>TestVisit<CR>zz')
-map('n', '<leader>ts', '<CMD>TestSuite<CR>')
-map('n', '<leader>tS', '<CMD>TestSuite -strategy=neomake<CR>')
-map('n', '<leader>tc', '<CMD>VimuxCloseRunner<CR>')
+map("n", "<leader>tt", "<CMD>TestFile<CR>")
+map("n", "<leader>tT", "<CMD>TestFile -strategy=neomake<CR>")
+map("n", "<leader>tn", "<CMD>TestNearest<CR>")
+map("n", "<leader>tN", "<CMD>TestNearest -strategy=neomake<CR>")
+map("n", "<leader>t.", "<CMD>TestLast<CR>")
+map("n", "<leader>tv", "<CMD>TestVisit<CR>zz")
+map("n", "<leader>ts", "<CMD>TestSuite<CR>")
+map("n", "<leader>tS", "<CMD>TestSuite -strategy=neomake<CR>")
+map("n", "<leader>tc", "<CMD>VimuxCloseRunner<CR>")

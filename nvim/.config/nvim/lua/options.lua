@@ -26,7 +26,7 @@ vim.opt.termguicolors = true
 -- how many spaces should a tab be
 vim.opt.tabstop = 2
 
--- The "Leader key" is a way of extending the power of VIM's shortcuts by using sequences of keys to perform a command. 
+-- The "Leader key" is a way of extending the power of VIM's shortcuts by using sequences of keys to perform a command.
 -- The default leader key is backslash. Therefore, if you have a map of <Leader>Q, you can perform that action by typing \Q.
 -- see `:help <leader>`
 vim.g.mapleader = " "
@@ -37,7 +37,7 @@ vim.opt.errorbells = false
 vim.opt.sw = 2
 vim.opt.smartindent = true
 vim.opt.autoindent = true
-vim.opt.nu = true 
+vim.opt.nu = true
 vim.opt.re = 0
 vim.opt.smartcase = true
 vim.opt.backup = false
@@ -47,9 +47,9 @@ vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 
 if vim.fn.executable("rg") then
-  vim.o.grepprg = "rg --vimgrep --hidden -g !.git"
+	vim.o.grepprg = "rg --vimgrep --hidden -g !.git"
 end

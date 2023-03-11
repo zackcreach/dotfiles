@@ -63,5 +63,5 @@ local my_module = require('folder1.folder2.my-file')
 Time to start loading some modules
 --]]
 
-require('options')
-require('plugins')
+require("options")
+require("plugins")
