@@ -19,6 +19,5 @@ map('n', '<esc>', '<CMD>nohlsearch<CR>')
 map('n', '<leader>_', ':silent grep ', { silent = false })
 map('n', '<leader>g', ':G<CR>')
 
-map('n', '<M-s>', ':w<CR>')
-map('n', '<M-S>', ':wa<CR>')
+map('n', '<M-s>', ':Neoformat | :w<CR>')
 map('n', '<M-w>', ':q<CR>')

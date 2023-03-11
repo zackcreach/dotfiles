@@ -33,6 +33,13 @@ return require('packer').startup(function(use)
 		end
 	}
 
+	use {
+		'sbdchd/neoformat',
+		config = function()
+      require('formatting')
+		end
+	}
+
 	use('elixir-editors/vim-elixir')
 
 	use { 
