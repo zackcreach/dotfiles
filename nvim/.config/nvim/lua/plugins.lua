@@ -90,21 +90,29 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({
-		"mxsdev/nvim-dap-vscode-js",
-		requires = { "mfussenegger/nvim-dap" },
-		config = function()
-			require("debugger-js")
-		end,
-	})
-
-	use({
-		"microsoft/vscode-js-debug",
-		opt = true,
-		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-	})
+	-- 	Debugger
+	-- 	use({
+	-- 		"microsoft/vscode-js-debug",
+	-- 		opt = true,
+	-- 		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+	-- 	})
+	--
+	-- use({
+	-- 	"mxsdev/nvim-dap-vscode-js",
+	-- 	requires = { "mfussenegger/nvim-dap" },
+	-- 	config = function()
+	-- 		require("debugger-js")
+	-- 	end,
+	-- })
 
 	use("psliwka/vim-smoothie")
+
+	use({
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+	})
 
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -180,6 +188,13 @@ return require("packer").startup(function(use)
 			vim.g.slime_target = "tmux"
 			vim.g.slime_default_config = { socket_name = "default", target_pane = "{bottom}" }
 			vim.g.slime_dont_ask_default = 1
+		end,
+	})
+
+	use({
+		"alvan/vim-closetag",
+		config = function()
+			require("close")
 		end,
 	})
 end)
