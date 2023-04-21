@@ -5,7 +5,7 @@ local on_attach = function(client, buffer_nr)
 end
 
 lsp_config.elixirls.setup({
-	cmd = { vim.loop.os_homedir() .. "/.local/share/elixir-ls/rel/language_server.sh" },
+	cmd = { "/opt/homebrew/Cellar/elixir-ls/0.13.0/libexec/language_server.sh" },
 	on_attach = on_attach,
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })

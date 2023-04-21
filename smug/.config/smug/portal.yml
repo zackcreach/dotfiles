@@ -4,10 +4,10 @@ root: ~/dev/portal
 windows:
   - name: " "
     commands:
-      - nvim "+Telescope find_files"
+      - nvim "+G"
   - name: " "
     panes:
       - type: horizontal
         commands:
-        - clear
-        - iex -S mix phx.server
+          - clear
+          - iex -S mix phx.server

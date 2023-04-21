@@ -44,7 +44,7 @@ return require("packer").startup(function(use)
 
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		requires = { "nvim-treesitter/playground" },
+		requires = { "nvim-treesitter/nvim-treesitter-textobjects", "nvim-treesitter/playground" },
 		config = function()
 			require("treesitter")
 		end,
@@ -80,6 +80,28 @@ return require("packer").startup(function(use)
 		config = function()
 			require("linter")
 		end,
+	})
+
+	use({
+		"mfussenegger/nvim-dap",
+		branch = "master",
+		config = function()
+			require("debugger")
+		end,
+	})
+
+	use({
+		"mxsdev/nvim-dap-vscode-js",
+		requires = { "mfussenegger/nvim-dap" },
+		config = function()
+			require("debugger-js")
+		end,
+	})
+
+	use({
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
 	})
 
 	use("psliwka/vim-smoothie")
@@ -149,6 +171,15 @@ return require("packer").startup(function(use)
 		},
 		config = function()
 			require("testing")
+		end,
+	})
+
+	use({
+		"jpalardy/vim-slime",
+		config = function()
+			vim.g.slime_target = "tmux"
+			vim.g.slime_default_config = { socket_name = "default", target_pane = "{bottom}" }
+			vim.g.slime_dont_ask_default = 1
 		end,
 	})
 end)

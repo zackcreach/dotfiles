@@ -9,5 +9,5 @@ windows:
     panes:
       - type: horizontal
         commands:
-        - clear
-        - clear
+          - clear
+          - clear

@@ -1,5 +1,5 @@
-session: OZONE
-root: ~/dev/ozone
+session: TATTOUR
+root: ~/dev/tattour
 
 windows:
   - name: " "
@@ -10,4 +10,4 @@ windows:
       - type: horizontal
         commands:
           - clear
-          - yarn dev
+          - npm run dev

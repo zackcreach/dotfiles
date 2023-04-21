@@ -1,7 +1,8 @@
 local map = vim.keymap.set
 
-map("n", "<bs>", ":b#<cr>")
-map("n", "<bs>", ":b#<cr>")
+map("n", "<bs>", ":b#<CR>")
+map("n", "<F1>", ":bprev<CR>")
+map("n", "<F2>", ":bnext<CR>")
 map("n", "<UP>", "<CMD>cope<CR>")
 map("n", "<DOWN>", "<CMD>cclose<CR>")
 map("n", "<RIGHT>", "<CMD>cnext<CR>")
@@ -16,8 +17,14 @@ map("n", "*", "*zz")
 map("n", "#", "#zz")
 map("n", "<esc>", "<CMD>nohlsearch<CR>")
 
+-- Leader
 map("n", "<leader>_", ":silent grep ", { silent = false })
-map("n", "<leader>g", ":G<CR>")
+map("n", "<leader>d", ":G<CR>")
+map("n", "<leader>s", ":Neoformat | :w<CR>")
+map("n", "<leader>w", ":q<CR>")
 
+-- MacOS
+map("n", "<M-f>", ":silent grep ", { silent = false })
+map("n", "<M-d>", ":G<CR>")
 map("n", "<M-s>", ":Neoformat | :w<CR>")
 map("n", "<M-w>", ":q<CR>")

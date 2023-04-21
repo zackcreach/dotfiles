@@ -2,10 +2,37 @@
 	name = Zack Creach
 	email = zackcreach@gmail.com
 	signingkey = 64E36B881E7F93F5
+[init]
+	defaultBranch = main
 [push]
 	default = current
 [pull]
 	default = current
+
+[diff]
+	algorithm = histogram
+
+[interactive]
+	diffFilter = delta --color-only
+
+[blame]
+	date = relative
+
+[rebase]
+	autosquash = true
+
+[merge]
+	conflictstyle = diff3
+
+[delta]
+	navigate = true
+	minus-style = "auto #411E35"
+	plus-style = "auto #133246"
+	light = false
+	side-by-side = true
+	line-numbers = true
+	syntax-theme = base16-256
+
 [alias]
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 	s = status
@@ -23,8 +50,11 @@
 	aa = add .
 	st = stash --include-untracked
 	sp = stash pop
+	fm = fetch origin main:main
 	mm = merge main
+
 [core]
-  	excludesFile = ~/.config/git/.gitignore
+	excludesFile = ~/.config/git/.gitignore
+
 [commit]
 	gpgsign = true
