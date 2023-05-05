@@ -49,6 +49,11 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
+vim.opt.foldenable = true
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevelstart = 10
+vim.opt.foldnestmax = 10
 
 if vim.fn.executable("rg") then
 	vim.o.grepprg = "rg --vimgrep --hidden -g !.git"

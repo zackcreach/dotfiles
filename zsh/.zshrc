@@ -16,6 +16,7 @@ export SPOTIFY_STATE="da4u3A4gB4uyasf8"
 export SPOTIFY_DEVICE_ID_PRIMARY=""
 export SPOTIFY_TOKEN_REFRESH="AQDbxmefQ4bI5ufUHprFHkXf3U5P1q7vz8TH5CKy7g0yPBczA4D6V9eSsdy3Y8FTeIVSip3Odnk4-r78GTnMHDiyT2-jV8vFZ6SmqdFHY9lyq3z_0UNST5I_H_xHKP_yMes"
 export SPOTIFY_TOKEN_ACTIVE="BQAKdi1qCRjDAp62jU7OzqEAym6Y5K4_GihXn791VxHAHZpXzDEhJaHUVBMH6xbMmFv40ChYgv-IQEpPCfZSzjv8xk-eWBZ2WYWycfIdlFUObRYUmIENmVsjxOMaf0bSg1yMM2wmM_hXNqRkZLGrLM1ryrnOqSkjW1l5wI3alfQhvP4ABA79THMODthFC4CO8cueG-W8iQXwOwtAfRrXd4uHKLItufwZKJFZjShPLeq6hbCdh8rsf4RSiQAYVcCZ3LU"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -137,3 +138,11 @@ alias PG="psql --host=gif-master-db.cgbafay9iyen.us-east-1.rds.amazonaws.com --p
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(/opt/homebrew/bin/brew shellenv)"
 . $(brew --prefix asdf)/libexec/asdf.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/zack/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/zack/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/zack/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/zack/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(direnv hook zsh)"

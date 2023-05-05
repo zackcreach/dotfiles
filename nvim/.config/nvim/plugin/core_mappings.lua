@@ -20,6 +20,8 @@ map("n", "<esc>", "<CMD>nohlsearch<CR>")
 -- Leader
 map("n", "<leader>_", ":silent grep ", { silent = false })
 map("n", "<leader>d", ":G<CR>")
+map("n", "<leader>gl", "<CMD>Gclog<CR>")
+map("n", "<leader>gh", "<CMD>0Gclog<CR>")
 map("n", "<leader>s", ":Neoformat | :w<CR>")
 map("n", "<leader>w", ":q<CR>")
 

@@ -1,13 +1,12 @@
-session: OZONE
-root: ~/dev/ozone
+session: GIFMASTER
+root: ~/dev/gifmaster5000/
 
 windows:
   - name: " "
     commands:
-      - nvim "+G"
+      - nvim "+NvimTreeToggle"
   - name: " "
     panes:
       - type: horizontal
         commands:
-          - clear
-          - yarn dev
+          - iex -S mix phx.server
