@@ -1,5 +1,5 @@
-session: GIFMASTER
-root: ~/dev/gifmaster5000/
+session: OZONE
+root: ~/dev/ozone/
 
 windows:
   - name: " "
@@ -9,4 +9,4 @@ windows:
     panes:
       - type: horizontal
         commands:
-          - iex -S mix phx.server
+          - yarn dev
