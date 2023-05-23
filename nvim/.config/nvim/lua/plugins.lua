@@ -76,6 +76,11 @@ return require("packer").startup(function(use)
 	})
 
 	use({
+		"rhysd/git-messenger.vim",
+		cmd = "GitMessenger",
+	})
+
+	use({
 		"mfussenegger/nvim-lint",
 		config = function()
 			require("linter")
