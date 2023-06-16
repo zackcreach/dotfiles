@@ -24,6 +24,8 @@ map("n", "<leader>gl", "<CMD>Gclog<CR>")
 map("n", "<leader>gh", "<CMD>0Gclog<CR>")
 map("n", "<leader>gm", "<CMD>GitMessenger<CR>")
 map("n", "<leader>gb", "<CMD>G blame<CR>")
+map("n", "<leader>gw", "<CMD>Gwrite<CR>")
+map("n", "<leader>gr", "<CMD>Gread<CR>")
 map("n", "<leader>s", "<CMD>Neoformat | :w<CR>")
 map("n", "<leader>w", "<CMD>q<CR>")
 

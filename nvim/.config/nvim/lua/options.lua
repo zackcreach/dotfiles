@@ -54,6 +54,7 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 10
 vim.opt.foldnestmax = 10
+vim.opt.fillchars = vim.opt.fillchars + "eob: "
 
 if vim.fn.executable("rg") then
 	vim.o.grepprg = "rg --vimgrep --hidden -g !.git"

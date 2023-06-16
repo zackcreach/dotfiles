@@ -3,5 +3,5 @@
 cd ~/dotfiles/
 case $1 in
   install) brew bundle;;
-  config) stow */;;
+  config) stow */ --no-folding;;
 esac

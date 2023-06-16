@@ -24,6 +24,27 @@ return require("packer").startup(function(use)
 	use("tpope/vim-surround")
 	use("tpope/vim-commentary")
 	use("tpope/vim-fugitive")
+	use({
+		"tpope/vim-projectionist",
+		setup = function()
+			vim.g.projectionist_heuristics = {
+				["*"] = {
+					["*.ex"] = {
+						alternate = {
+							"{}_test.exs",
+						},
+						type = "source",
+					},
+					["*_test.exs"] = {
+						alternate = {
+							"{}.ex",
+						},
+						type = "test",
+					},
+				},
+			}
+		end,
+	})
 
 	use({
 		"neovim/nvim-lspconfig",

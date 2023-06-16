@@ -52,9 +52,12 @@
 	sp = stash pop
 	fm = fetch origin main:main
 	mm = merge main
+	pf = push --force-with-lease
 
 [core]
-	excludesFile = ~/.config/git/.gitignore
+	excludesFile = ~/.config/git/gitignore
 
 [commit]
+	template = ~/.config/git/commit-template
+	verbose = true
 	gpgsign = true
