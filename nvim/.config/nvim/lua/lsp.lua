@@ -10,4 +10,10 @@ lsp_config.elixirls.setup({
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 
+lsp_config.tailwindcss.setup({
+	cmd = { "/opt/homebrew/Cellar/tailwindcss-language-server/0.0.13/bin/tailwindcss-language-server" },
+	on_attach = on_attach,
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+})
+
 lsp_config.tsserver.setup({ on_attach = on_attach })
