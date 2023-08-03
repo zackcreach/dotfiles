@@ -5,13 +5,13 @@ local on_attach = function(client, buffer_nr)
 end
 
 lsp_config.elixirls.setup({
-	cmd = { "/opt/homebrew/Cellar/elixir-ls/0.13.0/libexec/language_server.sh" },
+	cmd = { "/opt/homebrew/bin/elixir-ls" },
 	on_attach = on_attach,
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
 
 lsp_config.tailwindcss.setup({
-	cmd = { "/opt/homebrew/Cellar/tailwindcss-language-server/0.0.13/bin/tailwindcss-language-server" },
+	cmd = { "/opt/homebrew/bin/tailwindcss-language-server" },
 	on_attach = on_attach,
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })

@@ -17,9 +17,12 @@ map("n", "*", "*zz")
 map("n", "#", "#zz")
 map("n", "<esc>", "<CMD>nohlsearch<CR>")
 
+map("t", "<ESC>", "<c-\\><c-n>", { silent = false })
+
 -- Leader
 map("n", "<leader>_", ":silent grep ", { silent = false })
 map("n", "<leader>d", "<CMD>G<CR>")
+map("n", "<leader>fr", "<CMD>lua vim.lsp.buf.references()<CR>")
 map("n", "<leader>gl", "<CMD>Gclog<CR>")
 map("n", "<leader>gh", "<CMD>0Gclog<CR>")
 map("n", "<leader>gm", "<CMD>GitMessenger<CR>")

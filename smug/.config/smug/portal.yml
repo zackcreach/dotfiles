@@ -6,6 +6,8 @@ windows:
     commands:
       - nvim "+G"
   - name: " "
+    commands:
+      - stripe listen --forward-to localhost:4000/webhooks/stripe
     panes:
       - type: horizontal
         commands:

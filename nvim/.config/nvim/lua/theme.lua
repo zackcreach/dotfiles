@@ -4,3 +4,4 @@ vim.cmd("colorscheme nord")
 -- so $VIMRUNTIME/syntax/hitest.vim
 vim.cmd("hi! link NormalFloat Visual")
 vim.cmd("hi! link NvimTreeWindowPicker LeapLabelSecondary")
+vim.cmd("hi! @error guibg=NONE gui=italic")

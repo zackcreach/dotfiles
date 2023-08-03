@@ -30,12 +30,11 @@ export GOPATH="$HOME/dev/go"
 export DEFAULT="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
 export SCRIPTS="$HOME/scripts/bin"
 export NODE="/Users/zack/.nvm/versions/node/v14.17.0/bin"
-export GO="/usr/local/go/bin"
-export QMK="/usr/local/opt/avr-gcc@8/bin"
 export FZF_DEFAULT_OPTS="--reverse --ansi --color=bg+:-1,fg:15,fg+:-1,prompt:6,header:5,pointer:2,hl:3,hl+:3,spinner:05,info:15,border:15"
 export MANPAGER="nvim +Man!"
 export YARN="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH=$DEFAULT:$SCRIPTS:$NODE:$GO:$QMK:$YARN
+export PATH=$DEFAULT:$SCRIPTS:$NODE:$YARN
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

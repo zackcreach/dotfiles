@@ -223,4 +223,24 @@ return require("packer").startup(function(use)
 			require("close")
 		end,
 	})
+
+	use({
+		"glacambre/firenvim",
+		run = function()
+			vim.fn["firenvim#install"](0)
+		end,
+		config = function()
+			require("browser")
+		end,
+	})
+
+	use({
+		"rmagatti/auto-session",
+		config = function()
+			require("auto-session").setup({
+				log_level = "error",
+				auto_session_suppress_dirs = { "~/" },
+			})
+		end,
+	})
 end)
