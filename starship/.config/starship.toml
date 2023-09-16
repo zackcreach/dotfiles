@@ -1,0 +1,29 @@
+add_newline=false
+command_timeout=3000 #ms
+
+format = """\
+  $directory\
+  $git_branch\
+  $git_status\
+  $line_break\
+  $line_break\
+  $character\
+"""
+
+[hostname]
+ssh_symbol = "󰐻 "
+style = "bold yellow"
+
+[git_branch]
+symbol = "󰊢 "
+style = "purple"
+format = "on [$symbol$branch]($style) "
+
+[directory]
+style = "blue"
+format = "[$path]($style) "
+
+[character]
+success_symbol = "[󰱫 ](green)"
+error_symbol = "[󰱶 ](yellow)"
+vicmd_symbol = "[󰱱 ](blue)"

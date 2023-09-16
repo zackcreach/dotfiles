@@ -7,6 +7,7 @@ return require("packer").startup(function(use)
 		requires = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
+			"nvim-telescope/telescope-symbols.nvim",
 		},
 		config = function()
 			require("fuzzy")
@@ -136,7 +137,9 @@ return require("packer").startup(function(use)
 	use({
 		"ggandor/leap.nvim",
 		config = function()
-			require("leap").add_default_mappings()
+			local leap = require("leap")
+			leap.opts.safe_labels = {}
+			leap.add_default_mappings()
 		end,
 	})
 
@@ -209,22 +212,6 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"jpalardy/vim-slime",
-		config = function()
-			vim.g.slime_target = "tmux"
-			vim.g.slime_default_config = { socket_name = "default", target_pane = "{bottom}" }
-			vim.g.slime_dont_ask_default = 1
-		end,
-	})
-
-	use({
-		"alvan/vim-closetag",
-		config = function()
-			require("close")
-		end,
-	})
-
-	use({
 		"glacambre/firenvim",
 		run = function()
 			vim.fn["firenvim#install"](0)
@@ -241,6 +228,15 @@ return require("packer").startup(function(use)
 				log_level = "error",
 				auto_session_suppress_dirs = { "~/" },
 			})
+		end,
+	})
+
+	use({
+		"jpalardy/vim-slime",
+		setup = function()
+			vim.g.slime_target = "tmux"
+			vim.g.slime_default_config = { socket_name = "default", target_pane = "{right}" }
+			vim.g.slime_dont_ask_default = 1
 		end,
 	})
 end)

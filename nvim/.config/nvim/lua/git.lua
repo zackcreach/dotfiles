@@ -4,14 +4,14 @@ function next_hunk()
 	-- Move to next hunk
 	gitsigns.next_hunk()
 	-- center cursor
-	vim.cmd("normal zz")
+	-- vim.cmd("normal zz")
 end
 
 function prev_hunk()
 	-- Move to prev hunk
 	gitsigns.prev_hunk()
 	-- center cursor
-	vim.cmd("normal zz")
+	-- vim.cmd("normal zz")
 end
 
 gitsigns.setup({
