@@ -12,6 +12,20 @@ telescope.setup({
 		find_files = {
 			find_command = { "rg", "--files", "--hidden", "-g", "!.git" },
 		},
+		live_grep = {
+			vimgrep_arguments = {
+				"rg",
+				"-g",
+				"!.git",
+				"--hidden",
+				"--color=never",
+				"--no-heading",
+				"--with-filename",
+				"--line-number",
+				"--column",
+				"--smart-case",
+			},
+		},
 	},
 })
 
