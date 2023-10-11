@@ -31,6 +31,8 @@ map("n", "<leader>gp", "<CMD>G push<CR>")
 map("n", "<leader>gP", "<CMD>G fp<CR>")
 map("n", "<leader>gw", "<CMD>Gwrite<CR>")
 map("n", "<leader>gr", "<CMD>Gread<CR>")
+map({ "n", "v" }, "<leader>gv", "<CMD>GBrowse<CR>")
+map({ "n", "v" }, "<leader>gV", "<CMD>GBrowse!<CR>")
 map("n", "<leader>s", "<CMD>Neoformat | :w<CR>")
 map("n", "<leader>w", "<CMD>q<CR>")
 
