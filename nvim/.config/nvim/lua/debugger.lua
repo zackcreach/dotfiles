@@ -1,12 +1,21 @@
 local dap = require("dap")
+local dapUi = require("dapui")
 local dapWidgets = require("dap.ui.widgets")
+
+-- return function(_, opts)
+--   local dap, dapui = require "dap", require "dapui"
+--   dap.listeners.after.event_initialized["dapui_config"] = function() dapui.open() end
+--   dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
+--   dap.listeners.before.event_exited["dapui_config"] = function() dapui.close() end
+--   dapui.setup(opts)
+-- end
 
 -- debugging
 dap.set_log_level("TRACE")
 
 dap.adapters.mix_task = {
 	type = "executable",
-	command = "/opt/homebrew/Cellar/elixir-ls/0.13.0/libexec/debugger.sh", -- debugger.bat for windows
+	command = "/opt/homebrew/Cellar/elixir-ls/0.16.0/libexec/debugger.sh", -- debugger.bat for windows
 	args = {},
 }
 
@@ -19,7 +28,7 @@ dap.adapters.chrome = {
 dap.configurations.elixir = {
 	{
 		type = "mix_task",
-		name = "mix test",
+		name = "Tests",
 		task = "test",
 		taskArgs = { "--trace" },
 		request = "launch",
@@ -28,13 +37,15 @@ dap.configurations.elixir = {
 		requireFiles = {
 			"lib/**/*_test.exs",
 		},
+		exitAfterTaskReturns = true,
 	},
 	{
 		type = "mix_task",
-		name = "phx.server",
+		name = "Server",
 		request = "launch",
 		task = "phx.server",
 		projectDir = ".",
+		exitAfterTaskReturns = true,
 	},
 }
 
@@ -84,7 +95,7 @@ dap.configurations.typescriptreact = {
 	},
 }
 
-vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" })
 
 vim.keymap.set("n", "<F5>", function()
 	dap.continue()
@@ -101,27 +112,11 @@ end)
 vim.keymap.set("n", "<F4>", function()
 	dap.toggle_breakpoint()
 end)
+
 vim.keymap.set("n", "<leader>dr", function()
-	dap.repl.open()
-end)
-vim.keymap.set("n", "<leader>dl", function()
-	dap.run_last()
+	dapUi.setup()
+	dapUi.open()
 end)
 vim.keymap.set("n", "<leader>dt", function()
-	dap.repl.toggle()
-end)
-
-vim.keymap.set({ "n", "v" }, "<leader>dh", function()
-	require("dap.ui.widgets").hover()
-end)
-vim.keymap.set({ "n", "v" }, "<leader>dp", function()
-	require("dap.ui.widgets").preview()
-end)
-vim.keymap.set("n", "<leader>df", function()
-	local widgets = require("dap.ui.widgets")
-	widgets.centered_float(widgets.frames)
-end)
-vim.keymap.set("n", "<leader>ds", function()
-	local widgets = require("dap.ui.widgets")
-	widgets.centered_float(widgets.scopes)
+	dapUi.toggle()
 end)

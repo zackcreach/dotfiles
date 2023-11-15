@@ -2,10 +2,14 @@
 	name = Zack Creach
 	email = zackcreach@gmail.com
 	signingkey = 64E36B881E7F93F5
+
 [init]
 	defaultBranch = main
+
 [push]
 	default = current
+	autoSetupRemote = true
+
 [pull]
 	default = current
 

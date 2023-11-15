@@ -122,6 +122,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = {
+			"mfussenegger/nvim-dap",
+		},
+	})
+
 	-- 	Debugger
 	-- 	use({
 	-- 		"microsoft/vscode-js-debug",

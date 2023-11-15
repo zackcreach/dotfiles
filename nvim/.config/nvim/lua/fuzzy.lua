@@ -7,6 +7,7 @@ telescope.setup({
 		layout_config = {
 			prompt_position = "top",
 		},
+		prompt_prefix = "󰱨 ",
 	},
 	pickers = {
 		find_files = {

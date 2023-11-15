@@ -1,8 +1,6 @@
 local map = vim.keymap.set
 
 map("n", "<bs>", ":b#<CR>")
-map("n", "<F1>", ":bprev<CR>")
-map("n", "<F2>", ":bnext<CR>")
 map("n", "<UP>", "<CMD>cope<CR>")
 map("n", "<DOWN>", "<CMD>cclose<CR>")
 map("n", "<RIGHT>", "<CMD>cnext<CR>")
@@ -22,7 +20,6 @@ map("t", "<ESC>", "<c-\\><c-n>", { silent = false })
 -- Leader
 map("n", "<leader>_", ":silent grep ", { silent = false })
 map("n", "<leader>d", "<CMD>G<CR>")
-map("n", "<leader>fr", "<CMD>lua vim.lsp.buf.references()<CR>")
 map("n", "<leader>gl", "<CMD>Gclog<CR>")
 map("n", "<leader>gh", "<CMD>0Gclog<CR>")
 map("n", "<leader>gm", "<CMD>GitMessenger<CR>")
