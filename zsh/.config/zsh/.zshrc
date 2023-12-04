@@ -20,7 +20,8 @@ source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # Local variables
 export FONTAWESOME_NPM_AUTH_TOKEN=06536BB0-ECE8-4A79-941F-416036FE5BD2
 export NODE_HEROKU=true
-export DEV_MONGO_CONNECTION_STRING=mongodb://heroku_fq3mct63:oviqo6fug1mufnqilqjhskbu5t@ds343098-a0.mlab.com:43098,ds343098-a1.mlab.com:43098/heroku_fq3mct63?replicaSet\=rs-ds343098
+export PRETTIERD_DEFAULT_CONFIG=$HOME/dev/ozone/prettier.config.js
+
 
 # PATHS
 export DEFAULT="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin"

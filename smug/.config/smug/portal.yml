@@ -1,5 +1,5 @@
 session: PORTAL
-root: ~/dev/portal
+root: ~/dev/portal/
 
 before_start:
   - docker compose up -d

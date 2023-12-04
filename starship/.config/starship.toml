@@ -1,5 +1,5 @@
 add_newline=false
-command_timeout=3000 #ms
+command_timeout=10000 #ms
 
 format = """\
   $directory\
