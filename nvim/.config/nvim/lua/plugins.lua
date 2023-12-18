@@ -215,7 +215,6 @@ return require("packer").startup(function(use)
 		"janko/vim-test",
 		requires = {
 			"tpope/vim-dispatch",
-			"neomake/neomake",
 			"preservim/vimux",
 		},
 		config = function()
@@ -240,15 +239,6 @@ return require("packer").startup(function(use)
 				log_level = "error",
 				auto_session_suppress_dirs = { "~/" },
 			})
-		end,
-	})
-
-	use({
-		"jpalardy/vim-slime",
-		setup = function()
-			vim.g.slime_target = "tmux"
-			vim.g.slime_default_config = { socket_name = "default", target_pane = "{right}" }
-			vim.g.slime_dont_ask_default = 1
 		end,
 	})
 end)
