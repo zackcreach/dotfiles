@@ -48,11 +48,14 @@ bindkey -M vicmd v edit-command-line
 
 alias vi="nvim"
 alias I="echo -e '\n// IEX Phoenix Server';iex -S mix phx.server"
-alias R="echo -e '\n// Removing node_modules/';rm -rf node_modules/"
+# alias R="echo -e '\n// Removing node_modules/';rm -rf node_modules/"
 alias D="echo -e '\n// Removing deps/';rm -rf deps/"
 alias grep="history | grep --color=auto"
 alias branchcopy="git rev-parse --abbrev-ref HEAD | pbcopy"
 alias PG="psql --host=gif-master-db.cgbafay9iyen.us-east-1.rds.amazonaws.com --port=5432 --username=superuser --password --dbname=postgres"
+
+alias -g CC="| pbcopy"
+alias -g R="| rg"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(/opt/homebrew/bin/brew shellenv)"

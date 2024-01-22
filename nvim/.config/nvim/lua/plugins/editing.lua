@@ -3,6 +3,8 @@ return {
 	"tpope/vim-commentary",
 	{
 		"ggandor/leap.nvim",
+		lazy = true,
+		event = { "VeryLazy" },
 		config = function()
 			local leap = require("leap")
 			leap.opts.safe_labels = {}
@@ -33,6 +35,8 @@ return {
 	-- Auto formatting
 	{
 		"sbdchd/neoformat",
+		lazy = true,
+		event = { "VeryLazy" },
 		init = function()
 			-- Format on save
 			-- vim.api.nvim_create_autocmd("BufWritePre", {
@@ -79,8 +83,12 @@ return {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"nvim-treesitter/playground",
 		},
+		lazy = true,
+		event = { "VeryLazy" },
+		build = ":TSUpdate",
 		opts = {
 			ensure_installed = "all",
+			auto_install = false,
 			highlight = {
 				enable = true,
 			},

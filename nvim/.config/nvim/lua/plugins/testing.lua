@@ -22,6 +22,8 @@ return {
 	},
 	{
 		"janko/vim-test",
+		lazy = true,
+		event = { "VeryLazy" },
 		dependencies = {
 			"tpope/vim-dispatch",
 			"preservim/vimux",

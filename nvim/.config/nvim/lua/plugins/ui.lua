@@ -63,6 +63,7 @@ return {
 		"NvChad/nvim-colorizer.lua",
 		opts = {
 			user_default_options = {
+				filetypes = { "*" },
 				mode = "virtualtext",
 				virtualtext = "■",
 				names = false,
@@ -95,16 +96,16 @@ return {
 	-- Sessions
 	{
 		"rmagatti/auto-session",
-		config = function()
-			require("auto-session").setup({
-				log_level = "error",
-				auto_session_suppress_dirs = { "~/" },
-			})
-		end,
+		opts = {
+			log_level = "error",
+			auto_session_suppress_dirs = { "~/" },
+		},
 	},
 	-- Debugger
 	{
 		"mfussenegger/nvim-dap",
+		lazy = true,
+		event = { "VeryLazy" },
 		branch = "master",
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
@@ -127,7 +128,7 @@ return {
 
 			dap.adapters.mix_task = {
 				type = "executable",
-				command = "/opt/homebrew/Cellar/elixir-ls/0.16.0/libexec/debugger.sh", -- debugger.bat for windows
+				command = "/opt/homebrew/Cellar/elixir-ls/0.18.1/libexec/debug_adapter.sh", -- debugger.bat for windows
 				args = {},
 			}
 
@@ -221,6 +222,7 @@ return {
 			vim.keymap.set("n", "<F12>", function()
 				dap.step_out()
 			end)
+
 			vim.keymap.set("n", "<F4>", function()
 				dap.toggle_breakpoint()
 			end)
@@ -229,6 +231,7 @@ return {
 				dapUi.setup()
 				dapUi.open()
 			end)
+
 			vim.keymap.set("n", "<leader>dt", function()
 				dapUi.toggle()
 			end)
@@ -241,4 +244,152 @@ return {
 			vim.g.tmux_navigator_disable_when_zoomed = true
 		end,
 	},
+	-- lazy.nvim
+	-- {
+	-- 	"rcarriga/nvim-notify",
+	-- 	lazy = true,
+	-- 	config = function(_self, opts)
+	-- 		require("notify").setup(opts)
+	-- 		vim.notify = require("notify")
+	-- 	end,
+	-- 	opts = {
+	-- 		timeout = 2500,
+	-- 		render = "wrapped-compact",
+	-- 		stages = "no_animation",
+	-- 		level = vim.log.levels.INFO,
+	-- 		top_down = false,
+	-- 	},
+	-- },
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	lazy = true,
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		cmdline = {
+	-- 			format = {
+	-- 				cmdline = { pattern = "^:", icon = "λ", lang = "vim" },
+	-- 				search_down = { kind = "search", pattern = "^/", icon = "󱎸 ", lang = "regex" },
+	-- 				search_up = { kind = "search", pattern = "^%?", icon = "󱈇 ", lang = "regex" },
+	-- 			},
+	-- 		},
+	-- 		lsp = {
+	-- 			progress = { enabled = true },
+	-- 			-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+	-- 			override = {
+	-- 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+	-- 				["vim.lsp.util.stylize_markdown"] = true,
+	-- 				["cmp.entry.get_documentation"] = true,
+	-- 			},
+	-- 		},
+	-- 		-- you can enable a preset for easier configuration
+	-- 		presets = {
+	-- 			bottom_search = true, -- use a classic bottom cmdline for search
+	-- 			command_palette = true, -- position the cmdline and popupmenu together
+	-- 			long_message_to_split = true, -- long messages will be sent to a split
+	-- 			inc_rename = false, -- enables an input dialog for inc-rename.nvim
+	-- 			lsp_doc_border = false, -- add a border to hover docs and signature help
+	-- 		},
+	-- 		messages = {
+	-- 			view_search = false,
+	-- 		},
+	-- 		routes = {
+	-- 			{
+	-- 				view = "notify",
+	-- 				filter = { event = "msg_showmode" },
+	-- 			},
+	-- 			{
+	-- 				filter = {
+	-- 					event = "msg_show",
+	-- 					any = {
+	-- 						{ find = "%d+L, %d+B" },
+	-- 						{ find = "; after #%d+" },
+	-- 						{ find = "; before #%d+" },
+	-- 						{ find = "%d fewer lines" },
+	-- 						{ find = "%d more lines" },
+	-- 					},
+	-- 				},
+	-- 				opts = { skip = true },
+	-- 			},
+	-- 		},
+	-- 		views = {
+	-- 			cmdline_popup = {
+	-- 				position = {
+	-- 					row = "10%",
+	-- 					col = "50%",
+	-- 				},
+	-- 				border = {
+	-- 					style = "none",
+	-- 					padding = { 1, 1 },
+	-- 				},
+	-- 				filter_options = {},
+	-- 				win_options = {
+	-- 					winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 		cmdline = {
+	-- 			format = {
+	-- 				cmdline = { pattern = "^:", icon = "λ", lang = "vim" },
+	-- 				search_down = { kind = "search", pattern = "^/", icon = "󱎸 ", lang = "regex" },
+	-- 				search_up = { kind = "search", pattern = "^%?", icon = "󱈇 ", lang = "regex" },
+	-- 			},
+	-- 		},
+	-- 		lsp = {
+	-- 			progress = { enabled = true },
+	-- 			-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+	-- 			override = {
+	-- 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+	-- 				["vim.lsp.util.stylize_markdown"] = true,
+	-- 				["cmp.entry.get_documentation"] = true,
+	-- 			},
+	-- 		},
+	-- 		-- you can enable a preset for easier configuration
+	-- 		presets = {
+	-- 			bottom_search = true, -- use a classic bottom cmdline for search
+	-- 			command_palette = true, -- position the cmdline and popupmenu together
+	-- 			long_message_to_split = true, -- long messages will be sent to a split
+	-- 			inc_rename = false, -- enables an input dialog for inc-rename.nvim
+	-- 			lsp_doc_border = false, -- add a border to hover docs and signature help
+	-- 		},
+	-- 		routes = {
+	-- 			{
+	-- 				view = "notify",
+	-- 				filter = { event = "msg_showmode" },
+	-- 			},
+	-- 			{
+	-- 				filter = {
+	-- 					event = "msg_show",
+	-- 					any = {
+	-- 						{ find = "%d+L, %d+B" },
+	-- 						{ find = "; after #%d+" },
+	-- 						{ find = "; before #%d+" },
+	-- 						{ find = "%d fewer lines" },
+	-- 						{ find = "%d more lines" },
+	-- 					},
+	-- 				},
+	-- 				opts = { skip = true },
+	-- 			},
+	-- 		},
+	-- 		views = {
+	-- 			cmdline_popup = {
+	-- 				position = {
+	-- 					row = "10%",
+	-- 					col = "50%",
+	-- 				},
+	-- 				border = {
+	-- 					style = "none",
+	-- 					padding = { 1, 1 },
+	-- 				},
+	-- 				filter_options = {},
+	-- 				win_options = {
+	-- 					winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+	-- 				},
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"nvim-notify",
+	-- 	},
+	-- },
 }

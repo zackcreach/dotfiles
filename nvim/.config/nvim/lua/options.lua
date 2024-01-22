@@ -56,6 +56,9 @@ vim.opt.foldlevelstart = 10
 vim.opt.foldnestmax = 10
 vim.opt.fillchars = "eob: "
 
+-- Auto-session options
+vim.opt.sessionoptions = "buffers,winsize,winpos,tabpages"
+
 if vim.fn.executable("rg") then
 	vim.o.grepprg = "rg --vimgrep --hidden -g !.git"
 end
