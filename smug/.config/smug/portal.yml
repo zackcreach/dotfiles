@@ -8,13 +8,16 @@ stop:
   - docker compose down
 
 windows:
-  - name: " "
+  - name: ' '
     commands:
       - nvim
-  - name: " "
+  - name: ' '
     commands:
       - nvim creachpad.ex
     panes:
       - type: horizontal
         commands:
           - ips
+  - name: '󰪩 '
+    commands:
+      - nvim . +DBUI

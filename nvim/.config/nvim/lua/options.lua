@@ -30,6 +30,7 @@ vim.opt.tabstop = 2
 -- The default leader key is backslash. Therefore, if you have a map of <Leader>Q, you can perform that action by typing \Q.
 -- see `:help <leader>`
 vim.g.mapleader = " "
+vim.g.maplocalleader = " m"
 
 vim.opt.regexpengine = 1
 vim.opt.clipboard = "unnamed"

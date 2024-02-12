@@ -1,6 +1,5 @@
 return {
 	"tpope/vim-surround",
-	"tpope/vim-commentary",
 	{
 		"ggandor/leap.nvim",
 		lazy = true,
@@ -82,6 +81,7 @@ return {
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			"nvim-treesitter/playground",
+			"nvim-treesitter/playground",
 		},
 		lazy = true,
 		event = { "VeryLazy" },
@@ -131,5 +131,10 @@ return {
 		config = function(_plugin, opts)
 			require("nvim-treesitter.configs").setup(opts)
 		end,
+	},
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+		lazy = false,
 	},
 }

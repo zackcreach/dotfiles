@@ -142,6 +142,13 @@ return {
 				}),
 			})
 
+			cmp.setup.filetype("sql", {
+				sources = cmp.config.sources({
+					{ name = "vim-dadbod-completion" },
+					{ name = "buffer" },
+				}),
+			})
+
 			cmp.setup.filetype("lua", {
 				sources = cmp.config.sources({
 					{ name = "nvim_lua" },
