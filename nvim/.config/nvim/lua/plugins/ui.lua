@@ -72,6 +72,25 @@ return {
 		},
 	},
 	{
+		"rolv-apneseth/tfm.nvim",
+		config = function()
+			-- Set keymap so you can open the default terminal file manager (yazi)
+			vim.api.nvim_set_keymap("n", "<leader>E", "", {
+				noremap = true,
+				callback = function()
+					require("tfm").open(vim.fn.expand("%"))
+				end,
+			})
+
+			-- vim.api.nvim_set_keymap("n", "<leader>E", "", {
+			-- 	noremap = true,
+			-- 	callback = function()
+			-- 		require("tfm").open()
+			-- 	end,
+			-- })
+		end,
+	},
+	{
 		"nvim-tree/nvim-tree.lua",
 		opts = {
 			view = {
@@ -87,20 +106,11 @@ return {
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 		keys = {
 			{ "<leader>e", ":NvimTreeFindFile<cr>" },
-			{ "<leader>E", ":NvimTreeToggle<cr>" },
 		},
 		lazy = true,
 	},
 	-- Smooth scroll
 	"psliwka/vim-smoothie",
-	-- Sessions
-	{
-		"rmagatti/auto-session",
-		opts = {
-			log_level = "error",
-			auto_session_suppress_dirs = { "~/" },
-		},
-	},
 	-- Debugger
 	{
 		"mfussenegger/nvim-dap",
@@ -392,4 +402,5 @@ return {
 	-- 		"nvim-notify",
 	-- 	},
 	-- },
+	-- {
 }

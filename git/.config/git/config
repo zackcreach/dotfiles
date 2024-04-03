@@ -38,7 +38,7 @@
 	syntax-theme = base16-256
 
 [alias]
-	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	su = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 	s = status
 	co = checkout
 	coa = checkout .
@@ -57,6 +57,7 @@
 	fm = fetch origin main:main
 	mm = merge main
 	pf = push --force-with-lease
+	sync = !git fetch origin main:main && git rebase main
 
 [core]
 	excludesFile = ~/.config/git/gitignore

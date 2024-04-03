@@ -16,7 +16,6 @@ source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/plugins/elixir/elixir.plugin.zsh
 source $ZSH/plugins/fzf-tab/fzf-tab.plugin.zsh
 source $ZSH/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-
 # Local variables
 export FONTAWESOME_NPM_AUTH_TOKEN=06536BB0-ECE8-4A79-941F-416036FE5BD2
 export NODE_HEROKU=true
@@ -40,6 +39,10 @@ else
   export EDITOR='nvim'
 fi
 
+# Tab complete
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
+
 # Set vim as terminal editor
 bindkey -v
 autoload -Uz edit-command-line
@@ -53,6 +56,7 @@ alias D="echo -e '\n// Removing deps/';rm -rf deps/"
 alias grep="history | grep --color=auto"
 alias branchcopy="git rev-parse --abbrev-ref HEAD | pbcopy"
 alias PG="psql --host=gif-master-db.cgbafay9iyen.us-east-1.rds.amazonaws.com --port=5432 --username=superuser --password --dbname=postgres"
+alias cat="bat --paging=never"
 
 alias -g CC="| pbcopy"
 alias -g R="| rg"
