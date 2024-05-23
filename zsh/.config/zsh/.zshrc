@@ -31,6 +31,7 @@ export MANPAGER="nvim +Man!"
 export YARN="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$DEFAULT:$SCRIPTS:$NODE:$YARN
 export ERL_AFLAGS="-kernel shell_history enabled"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -61,7 +62,8 @@ alias cat="bat --paging=never"
 alias -g CC="| pbcopy"
 alias -g R="| rg"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 . $(brew --prefix asdf)/libexec/asdf.sh
 

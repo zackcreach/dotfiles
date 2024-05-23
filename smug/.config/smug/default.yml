@@ -2,10 +2,10 @@ session: ${name}
 root: ${root}
 
 windows:
-  - name: " "
+  - name: ' '
     commands:
-      - nvim "+Telescope find_files"
-  - name: " "
+      - nvim
+  - name: ' '
     panes:
       - type: horizontal
         commands:
